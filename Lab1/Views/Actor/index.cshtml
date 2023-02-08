@@ -1,0 +1,7 @@
+﻿@model List<Actor>
+<h1>HighestPaidActor</h1>
+@foreach (Actor s in Model)
+{
+    <h3>@s.Name</h3>
+    <h4>@s.Paid</h4>
+}
