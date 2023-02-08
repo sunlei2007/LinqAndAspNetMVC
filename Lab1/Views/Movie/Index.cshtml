@@ -1,0 +1,15 @@
+﻿ 
+@model Movie
+@if (Model == null)
+{
+    <div>Error: No movie found with that id.</div>
+}
+else
+{
+    <h1>@Model.Title</h1>
+
+    <h3>@Model.Genre</h3>
+    <h3>@Model.Budget million</h3>
+   
+}
+

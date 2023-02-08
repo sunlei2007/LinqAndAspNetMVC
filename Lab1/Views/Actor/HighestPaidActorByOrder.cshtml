@@ -1,0 +1,11 @@
+﻿@Model Actor
+
+@if (Model == null)
+{
+    <div>Error: No actor found with that id.</div>
+}
+else
+{
+<h3>@Model.Name</h3>
+<h4>@Model.Paid</h4>
+}

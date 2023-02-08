@@ -1,0 +1,7 @@
+﻿@model List<Movie>
+<h1>MovieInBudget</h1>
+@foreach (Movie s in Model)
+{
+    <h3>@s.Title</h3>
+    <h4>@s.Genre</h4>
+}
