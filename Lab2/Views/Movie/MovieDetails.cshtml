@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Lab2.Models.Role>
+
+@{
+    ViewData["Title"] = "MovieDetails";
+    List<Rating> ratings = Lab2.Data.Context.ratings.Where(c => c.RatedId == @ViewBag.MovieId && c.Type == 0).ToList<Rating>();
+}
+
+<h1>MovieDetails</h1>
+
+<p>
+    @Html.ActionLink("AddComment", "CreateCommentView", new {  movieId=@ViewBag.MovieId,type=0})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Actor.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+             
+        </tr>
+}
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Level
+            </th>
+            <th>
+                Comment
+            </th>
+            <th>
+                User 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ratings)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
