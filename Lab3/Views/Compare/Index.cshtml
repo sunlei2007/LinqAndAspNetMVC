@@ -1,0 +1,12 @@
+﻿@model Lab3.Models.ViewModel.CompareVM
+
+<form asp-action="Index" method="post">
+    <div>
+        <select asp-for="MovieId1" asp-items="Model.Movies1"></select>
+    </div>
+    <div>
+        <select asp-for="MovieId2" asp-items="Model.Movies2"></select>
+    </div>
+    <input type="hidden" name="secret" value="Special note that cannot be seen" />
+    <input type="Submit" value="Compare" />
+</form>
